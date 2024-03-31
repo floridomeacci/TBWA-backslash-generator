@@ -1,0 +1,618 @@
+/*
+Theme Name: My Simple Theme
+Theme URI: http://example.com/my-simple-theme
+Author: Your Name
+Author URI: http://example.com
+Description: A simple and clean custom WordPress theme.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: my-simple-theme
+*/
+@font-face {
+    font-family: 'TBWAGrotesk-Black';
+    src: url('fonts/TBWAGrotesk-Black.woff2') format('woff2'),
+        url('fonts/TBWAGrotesk-Black.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TBWAGrotesk-Regular';
+    src: url('fonts/TBWAGrotesk-Regular.woff2') format('woff2'),
+        url('fonts/TBWAGrotesk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffcd00;
+    color: black;
+    font-family: 'TBWAGrotesk-Regular', sans-serif;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'TBWAGrotesk-Black', sans-serif;
+}
+
+h2 {
+    font-family: 'TBWAGrotesk-Black', sans-serif;
+}
+
+button {
+    font-family: 'TBWAGrotesk-Black', sans-serif;
+}
+
+#container {
+    padding-bottom: 0;
+    text-align: center;
+    position: relative;
+    /* Add relative positioning to the container */
+}
+
+#output {
+    display: none; /* Initially hidden */
+    opacity: 0; /* Start fully transparent */
+    transform: scale(0.5); /* Start scaled down */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for both properties */
+}
+
+#output.visible {
+    display: block; /* Make visible */
+    opacity: 1; /* Fade in to fully opaque */
+    transform: scale(1); /* Scale to normal size */
+}
+
+
+#customPlaceholder {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    pointer-events: none;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.2rem;
+    display: block;
+}
+
+
+#disclaimer {
+    position: absolute; /* Or fixed, depending on your needs */
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px; /* Adjust the padding as needed */
+    z-index: 1000; /* Ensures the logo stays above other elements */
+}
+
+#companyLogoContainer {
+    position: absolute; /* Or fixed, depending on your needs */
+    top: 0;
+    left: 0;
+    padding: 10px; /* Adjust the padding as needed */
+    z-index: 1000; /* Ensures the logo stays above other elements */
+}
+
+#companyLogo {
+    width: 100px; /* Adjust based on your logo's size */
+    height: auto; /* Keeps the aspect ratio intact */
+}
+
+
+
+
+#titleContainer img {
+    width: 300px;
+}
+
+
+#prompt {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    /* Black line for focus */
+    color: rgba(0, 0, 0, 0.9);
+    /* Text color */
+    font-family: 'TBWAGrotesk-Regular', sans-serif;
+    font-size: 1.2rem;
+    padding: 5px;
+    width: 80%;
+    box-sizing: border-box;
+    /* Include padding and border in height calculation */
+    min-height: 20px;
+    /* Allow it to start small but grow */
+    height: auto;
+    /* Height should adjust automatically */
+    resize: none;
+    /* Prevent manual resizing */
+    outline: none;
+    /* Focus outline */
+    overflow-y: hidden;
+    /* Hide vertical scrollbar, but allow growth */
+    text-align: center;
+    /* Center text */
+    line-height: 20px;
+    /* Adjust line height as needed */
+    display: inline-block;
+    /* Adjust if necessary to align with the cogwheel button */
+    vertical-align: middle;
+    /* Align the text input vertically with the button */
+}
+
+#buttonGen,
+#cogwheelButton {
+    vertical-align: middle;
+    /* Ensure vertical alignment with the input field */
+}
+
+
+
+
+#prompt:focus {
+    border-bottom: 3px solid black;
+    /* Thicker border on focus */
+}
+
+
+/* Style for placeholder text */
+::placeholder {
+    color: rgba(0, 0, 0, 0.9);
+    /* Black with 90% opacity */
+    text-align: center;
+    /* Center align placeholder text */
+    opacity: 1;
+    /* Override any default opacity */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+}
+
+
+#buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 16px;
+}
+
+#buttonGen {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 100px !important;
+    border-radius: 4pt;
+    font-size: 1.5rem;
+    background-color: black !important;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: color 0.4s, background-color 0.4s;
+    outline: none;
+}
+
+#buttonGen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 204, 0, 0.2);
+    pointer-events: none;
+    transition: transform 0.5s ease-out;
+    transform: skewX(-15deg);
+}
+
+#buttonGen:hover::before {
+    transform: translateX(300%);
+    transition: transform 0.5s ease-out;
+}
+
+#buttonGen:hover {
+    background-color: #ff00f2 !important;
+    color: rgb(255, 255, 255);
+}
+
+
+
+.buttonConfirm,
+#confirmSelection {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 90px;
+    border-radius: 4pt;
+    font-size: 1.5rem;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: color 0.4s, background-color 0.4s;
+    outline: none;
+}
+
+.buttonConfirm::before,
+#confirmSelection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 204, 0, 0.2);
+    pointer-events: none;
+    transition: transform 0.5s ease-out;
+    transform: skewX(-15deg);
+}
+
+.buttonConfirm:hover::before,
+#confirmSelection:hover::before {
+    transform: translateX(300%);
+    transition: transform 0.5s ease-out;
+}
+
+.buttonConfirm:hover,
+#confirmSelection:hover {
+    background-color: #ff00f2;
+    color: rgb(255, 255, 255);
+}
+
+/* Styles for the loader */
+#loader-container {
+    display: none;
+    /* Hide loader container initially */
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    /* Position loader container fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    /* Assuming initial styles for positioning and display */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for fade-out and scale-down */
+    opacity: 1; /* Start fully opaque */
+    transform: scale(1); /* Start at normal size */
+}
+
+#loader-container.hidden {
+    opacity: 0; /* Fade out to fully transparent */
+    transform: scale(0.5); /* Scale down */
+    visibility: hidden; /* Use visibility to hide the loader without affecting the document flow */
+    transition-delay: 0.5s; /* Delay hiding the loader to allow the transition to complete */
+}
+
+#loader-text {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+
+.icon-button-options {
+
+    /* Existing styles */
+    margin-left: 10px;
+    /* Add space between the input field and the button */
+    padding: 0;
+    /* Adjust padding as needed */
+    display: inline-block;
+    /* Display inline with the input field */
+    width: 40px;
+    /* Adjust width to fit icon */
+    height: 40px;
+    /* Adjust height to fit icon */
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 0 5px;
+    /* Adjust margin as needed */
+}
+
+.icon-button-options img {
+    width: 100%;
+    height: 100%;
+}
+
+.icon-button-options:hover img {
+    filter: invert(100%);
+}
+
+@keyframes shake {
+
+    0% {
+        transform: translateX(20px);
+    }
+
+    10% {
+        transform: translateX(-20px);
+    }
+
+    20% {
+        transform: translateX(20px);
+    }
+
+    30% {
+        transform: translateX(-20px);
+    }
+
+    40% {
+        transform: translateX(20px);
+    }
+
+    50% {
+        transform: translateX(-20px);
+    }
+
+    60% {
+        transform: translateX(20px);
+    }
+
+    70% {
+        transform: translateX(-20px);
+    }
+
+    80% {
+        transform: translateX(20px);
+    }
+
+    90% {
+        transform: translateX(-20px);
+    }
+
+    100% {
+        transform: translateX(20px);
+    }
+}
+
+.shake-placeholder {
+    animation: shake 0.5s linear;
+    color: red;
+}
+
+/* Animation for scaling down the content */
+.scale-down {
+    animation: scaleDown 0.7s ease-out;
+}
+
+@keyframes scaleDown {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+
+/* Animation for scaling up the loader */
+#loader-container.scale-up {
+    animation: scaleUp 0.7s ease-out;
+}
+
+@keyframes scaleUp {
+    0% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+.scale-up-content {
+    animation: scaleUpContent 0.5s ease-out forwards;
+}
+
+@keyframes scaleUpContent {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+#promptTextCog {
+    display: flex;
+}
+
+#optionsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    border-radius: 8px;
+    z-index: 10;
+    background-color: transparent;
+    box-shadow: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: opacity 0.5s, transform 0.5s, visibility 0s 0.5s;
+}
+
+#optionsContainer.scale-up {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    transition-delay: 0s;
+}
+
+#optionsContainer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#optionsContainer hr {
+    width: 90%;
+    /* Adjusted to match the full width of options for visual consistency */
+    border: none;
+    height: 1px;
+    background-color: #000;
+    /* Black color for visibility */
+    margin: 20px auto;
+    /* Increase margin for visual separation */
+}
+
+#optionsContainer button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    /* Changed from block to inline-flex for horizontal alignment */
+    justify-content: center;
+    margin: 10px;
+    padding: 0;
+}
+
+#optionsContainer button img {
+    height: 50px;
+    /* Example size, adjust as necessary */
+    width: auto;
+    /* Maintain aspect ratio */
+    border: none;
+    /* Remove border */
+    background: none;
+    /* Remove background */
+}
+
+#optionsContainer .portrait button img {
+    height: 90px;
+    /* Example size, adjust as necessary */
+}
+
+#optionsContainer .square button img {
+    height: 70px;
+    /* Example size, adjust as necessary */
+}
+
+#optionsContainer .landscape,
+#optionsContainer .portrait {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Allow wrapping if needed */
+}
+
+
+#optionsContainer button:hover img,
+.selected-option img {
+    filter: invert(100%);
+    /* Invert colors on hover and for selected option */
+    transform: scale(1.1);
+    /* Optional: Scale up on hover for a slight zoom effect */
+}
+
+#generatedImage {
+    max-height: 60vh;
+    /* Maximum height of the image */
+    width: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    /* Adjust if necessary */
+    margin: 0 auto;
+    /* Center the image horizontally */
+}
+
+@keyframes spinAndTranslateY {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+#cogwheelButton:hover img {
+    animation: spinAndTranslateY 2s linear infinite;
+}
+
+
+#loader-animation {
+    width: 200px;
+    /* Adjust the width as needed */
+    height: auto;
+    /* This will maintain the aspect ratio */
+    /* Additional styles to position the video, if needed */
+    position: absolute;
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    /* Adjust based on the exact positioning you need */
+    filter: brightness(100%) contrast(150%);
+    z-index: -3;
+}
+
+.icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px 8px 12px;
+    gap: 6px;
+    background-color: #0f0f0f;
+    color: rgb(255, 255, 255);
+    font-family: 'TBWAGrotesk-Black', sans-serif;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    transform: skewX(20deg);
+}
+
+.icon-button img {
+    width: 28px; /* Adjust icon size */
+    height: auto; /* Maintain aspect ratio */
+    filter: invert(100%);
+    transform: skewX(-20deg);
+}
+
+.icon-button span {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transform: skewX(-20deg);
+}
+
+.icon-button:hover {
+    background-color: white; /* Or any color that fits your design */
+    color: black; /* Text color */
+}
+
+.icon-button:hover img {
+    filter: invert(0%);
+}

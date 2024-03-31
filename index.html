@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TBWA GEN</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="companyLogoContainer">
+        <img id="companyLogo" src="images/TBWAXlogo.svg" alt="Company Logo">
+    </div>
+    <div id="container">
+        <div id="titleContainer"><img id="title" src="images/title.gif" alt="TBWA\ BACKSLASH GENERATOR"></div>
+        <span id="customPlaceholder" style="text-align: center; position:absolute; pointer-events:none; color: rgba(0, 0, 0, 0.5);">Enter your prompt here</span>
+        <div id="promptTextCog"></div><textarea id="prompt" name="prompt" rows="1" placeholder=""></textarea>
+        <button id="cogwheelButton" class="icon-button-options">
+            <img src="images/cogwheel.svg" alt="Settings">
+        </button><br><br></div>
+        <button id="buttonGen" onclick="runModel()">IMAGINE</button>
+        <div id="optionsContainer" style="display: none;">
+            <ul>
+                <li><h2>Image size &<br> Alignment</h2></li>
+                <div class="square">
+                    <li><button id="centerAlignedSquare"><img src="images/1x1.png" alt="Center aligned square"></button></li>
+                </div>
+                <div class="portrait">
+                    <li><button id="leftAlignedPortrait"><img src="images/9x16_1.png" alt="Left aligned Portrait"></button></li>
+                    <li><button id="centeredAlignedPortrait"><img src="images/9x16_2.png" alt="Centered aligned Portrait"></button></li>
+                    <li><button id="rightAlignedPortrait"><img src="images/9x16_3.png" alt="Right aligned Portrait"></button></li>
+                </div>
+                <div class="landscape">
+                    <li><button id="leftAlignedLandscape"><img src="images/16x9_1.png" alt="Left aligned Landscape"></button></li>
+                    <li><button id="centeredAlignedLandscape"><img src="images/16x9_2.png" alt="Centered aligned Landscape"></button></li>
+                    <li><button id="rightAlignedLandscape"><img src="images/16x9_3.png" alt="Right aligned Landscape"></button></li>
+                </div>
+                <br>
+                <div class="buttonConfirm" id="confirmSelection"><button style="color: white; font-size: 1.5rem;">CONFIRM</button></div>  
+            </ul>
+        </div>
+        <div id="output" style="display: none;">
+            <img id="generatedImage" alt="Generated Image">
+            <div id="buttonContainer">
+                <button onclick="downloadImage()" class="icon-button">
+                    <span>Download</span>
+                    <img src="images/save.svg" alt="Download Image">
+                </button>
+                <button onclick="retryPrompt()" class="icon-button">
+                    <span>Same prompt</span>
+                    <img src="images/next.svg" alt="Retry Prompt">
+                </button>
+                <button onclick="refreshPage()" class="icon-button">
+                    <span>Start over</span>
+                    <img src="images/delete.svg" alt="Start Over">
+                </button>
+            </div>
+        </div>
+        <div id="message-container" style="display: none;"></div>
+        <div id="loader-container">
+            <p id="loader-text">Starting engine...</p>
+            <video id="loader-animation" loop muted autoplay>
+                <source src="images/loader.webm" type="video/webm">
+            </video>
+        </div>
+    </div>
+    <div id="disclaimer">
+        <p id="disclaimer">Please note that generated images are created by AI and may not accurately reflect real people, places, or specifics, and should be used with discretion.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
