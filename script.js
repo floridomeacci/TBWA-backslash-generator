@@ -318,7 +318,7 @@ async function runModel() {
         console.log('Prompt:', promptInput);
 
         const apiUrl = 'https://api.replicate.com/v1/predictions';
-        const apiToken = "r8_ecMvHyF0GofDpc0OfV0BrROJOelQZcS1sS1Ac";
+        const apiToken = "YOUR_API_KEY";
         const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
 
         const requestData = {
@@ -371,7 +371,7 @@ async function runModel() {
 async function checkPredictionStatus(predictionId) {
     console.log('Checking prediction status for ID:', predictionId);
     const apiUrl = 'https://api.replicate.com/v1/predictions';
-    const apiToken = "r8_ecMvHyF0GofDpc0OfV0BrROJOelQZcS1sS1Ac";
+    const apiToken = "YOUR_API_KEY";
     const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
 
     try {
@@ -502,7 +502,7 @@ function updateLoaderProgress(progress) {
 async function checkPredictionStatus(predictionId) {
     console.log('Checking prediction status for ID:', predictionId);
     const apiUrl = 'https://api.replicate.com/v1/predictions';
-    const apiToken = "r8_ecMvHyF0GofDpc0OfV0BrROJOelQZcS1sS1Ac";
+    const apiToken = "YOUR_API_KEY";
     const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
 
     try {
@@ -539,7 +539,7 @@ async function checkPredictionStatus(predictionId) {
 
 async function applyNSFWFilter(imageUrl) {
     const apiUrl = 'https://api.replicate.com/v1/predictions';
-    const apiToken = "r8_ecMvHyF0GofDpc0OfV0BrROJOelQZcS1sS1Ac";
+    const apiToken = "YOUR_API_KEY";
     const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
     const nsfwModelVersion = "88c3624a13d60bb5ecd0cb215e49e39d2a2135c211bcb94fc801d3def46803c4";
 
@@ -597,7 +597,7 @@ async function applyNSFWFilter(imageUrl) {
 
 async function checkNSFWFilterStatus(predictionId, imageUrl) {
     const apiUrl = 'https://api.replicate.com/v1/predictions';
-    const apiToken = "r8_ecMvHyF0GofDpc0OfV0BrROJOelQZcS1sS1Ac";
+    const apiToken = "YOUR_API_KEY";
     const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
 
     try {
