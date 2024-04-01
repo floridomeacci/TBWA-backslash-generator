@@ -27,15 +27,23 @@ Key features include:
 * An option menu for different sizes and alignments.
 * A NSFW check.
 * A kickass 3D loader.
-* Saved states.
+* Saved option menu states.
 
 <br>
 
+Start screen:
+
 ![Product Name Screen Shot 1](images/Screenshot%202024-03-31%20at%2010.53.23.png)
+
+Option menu:
 
 ![Product Name Screen Shot 2](images/Screenshot%202024-03-31%20at%2010.53.02.png)
 
+Load screen, followed by percentage loader:
+
 ![Product Name Screen Shot 3](images/Screenshot%202024-03-31%20at%2010.53.38.png)
+
+End result:
 
 ![Product Name Screen Shot 4](images/Screenshot%202024-03-31%20at%2010.54.03.png)
 
@@ -54,7 +62,7 @@ Key features include:
 
 Florido Meacci - meacciflorido@gmail.com
 
-Project Link: [https://github.com/floridomeacci/RoderickGPT](https://github.com/floridomeacci/RoderickGPT)
+Project Link: [https://github.com/floridomeacci/TBWA-backslash-generator](https://github.com/floridomeacci/TBWA-backslash-generator)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
