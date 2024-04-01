@@ -19,14 +19,15 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Every TBWA agency around the world has always produced their own creative backslahes. Whether to commomerate a holiday, event or client partnership. The backslashes are used in pitches, creatives decks or just for the fun of it. Now with the advent of generative AI, I went out to create a backslash AI generator for the company in my spare time. The backslash generator makes use of replicates.com lucataco/illusion-diffusion-hq model, otherwise known as the QR-monster model. But instead of QR-codes I used our companies logo (the backslash) for its guiding template. 
+Every TBWA agency around the world has always produced their own creative backslahes. Whether to commomerate a holiday, event or client partnership. The backslashes are used in pitches, creatives decks or just for the fun of it. Now with the advent of generative AI, I went out to create a backslash AI generator for the company in my spare time. The backslash generator makes use of replicates.com lucataco/illusion-diffusion-hq model, otherwise known as the QR-monster model. But instead of QR-codes I used our companies logo (the backslash) for its guiding template. I also implemented a NSFW filter through replicate.com (m1guelpf/nsfw-filter) which sends the generated images and scans them for NSFW content.
 
-The website is currently available on staging at <a href="https://gentbwanl.wpenginepowered.com/"><b>gen.tbwa.nl</b></a> but will eventually only be accesible for TBWA exmployees.
+The website is currently available on staging, at <a href="https://gentbwanl.wpenginepowered.com/"><b>gen.tbwa.nl</b></a> but will eventually only be accesible for TBWA exmployees.
 
 Key features include:
-* The bobblehead talks and uses a typewriter effect.
-* Images and/or videos pop-up after a while.
-* Ask anything or use the suggested qeuries.
+* An option menu for different sizes and alignments.
+* A NSFW check.
+* A kickass 3D loader.
+* Saved states.
 
 <br>
 
