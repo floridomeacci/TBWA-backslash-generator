@@ -19,11 +19,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-As a tribute to a colleague who departed from the company, I created RoderickGPT, a digital homage designed to embody his essence. RoderickGPT is a unique application that either communicates in Dunglish—a blend of broken English interlaced with Dutch words—or in Brabant's dialect, a regional variation of Dutch. Leveraging the OpenAI API, RoderickGPT is trained on datasets consisting of Roderick's anecdotes, meticulously translated and presented in both dialects to maintain purity in each dataset.
+Every TBWA agency around the world has always produced their own creative backslahes. Whether to commomerate a holiday, event or client partnership. The backslashes are used in pitches, creatives decks or just for the fun of it. Now with the advent of generative AI, I went out to create a backslash AI generator for the company in my spare time. The backslash generator makes use of replicates.com lucataco/illusion-diffusion-hq model, otherwise known as the QR-monster model. But instead of QR-codes I used our companies logo (the backslash) for its guiding template. 
 
-The website, accessible with the password **TBWA**, will be available until the end of 2024.
-
-![Product Name Screen Shot 1](images/Screenshot%202024-03-31%20at%2008.25.17.png)
+The website is currently available on staging at <a href="https://gentbwanl.wpenginepowered.com/"><b>gen.tbwa.nl</b></a> but will eventually only be accesible for TBWA exmployees.
 
 Key features include:
 * The bobblehead talks and uses a typewriter effect.
@@ -32,7 +30,14 @@ Key features include:
 
 <br>
 
-![Product Name Screen Shot 2](images/Screenshot%202024-03-31%20at%2008.26.11.png)
+![Product Name Screen Shot 1](images/Screenshot%202024-03-31%20at%2010.53.23.png)
+
+![Product Name Screen Shot 2](images/Screenshot%202024-03-31%20at%2010.53.02.png)
+
+![Product Name Screen Shot 3](images/Screenshot%202024-03-31%20at%2010.53.38.png)
+
+![Product Name Screen Shot 4](images/Screenshot%202024-03-31%20at%2010.54.03.png)
+
 
 <!-- BUILT WITH -->
 ## Built With
