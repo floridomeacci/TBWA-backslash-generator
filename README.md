@@ -53,7 +53,7 @@ End result:
 
 ![Product Name Screen Shot 4](images/Screenshot%202024-03-31%20at%2010.54.03.png)
 
-The uploaded code to github is 90% completed. TBWA has strict security protocals, this meant rewriting the code to work with their wordpress environment. I'm still working on some final issues. 
+The uploaded code to github is 90% completed. TBWA has strict security protocals, this meant rewriting the code to work with their wordpress environment. I'm still working on some final issues and features but my time is limited as since I'm doing this in my spare time. 
 
 <!-- BUILT WITH -->
 ## Built With
