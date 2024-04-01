@@ -26,10 +26,14 @@ Every TBWA agency around the world has always produced their own creative backsl
 The website is currently available on staging, at <a href="https://gentbwanl.wpenginepowered.com/"><b>gen.tbwa.nl</b></a>, but will eventually be accessible only to TBWA employees.
 
 Key features include:
-* An options menu for different sizes and alignments.
-* A NSFW check.
-* A kickass 3D loader.
-* Saved options menu states.
+* A customizable options menu for different sizes and alignments.
+* An NSFW content check.
+* A dynamic 3D loading animation.
+
+Upcoming features:
+* Persistent states for the options menu. (Currently in progress)
+* Queuing system for AI generation requests.
+* Implementation of rate limiting to ensure optimal performance.
 
 <br>
 
@@ -48,6 +52,8 @@ Load screen, followed by a percentage loader:
 End result:
 
 ![Product Name Screen Shot 4](images/Screenshot%202024-03-31%20at%2010.54.03.png)
+
+The uploaded code to github is 90% completed. TBWA has strict security protocals, this meant rewriting the code to work with their wordpress environment. I'm still working on some final issues. 
 
 <!-- BUILT WITH -->
 ## Built With
